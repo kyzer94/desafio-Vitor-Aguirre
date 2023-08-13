@@ -9,20 +9,17 @@ var cardapio = {
     combo2: 7.5
 };
 
-class CaixaDaLanchonete {
-    calcularValorDaCompra(metodoDePagamento, itens) {
-        var result = 123;
-        
-        return result;
-    }
 
-}
+var valorCalculado = "25";
 
-var caixa = new CaixaDaLanchonete();
-var valorCalculado=caixa.calcularValorDaCompra('debito', ['cafe,1','chantily,1']);
+valorCalculado = parseFloat(valorCalculado);
+
+
+
+
 
 console.log(valorCalculado);
 
-export { CaixaDaLanchonete };
+
 
 
