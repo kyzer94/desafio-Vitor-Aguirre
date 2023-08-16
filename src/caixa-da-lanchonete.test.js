@@ -23,6 +23,16 @@ describe('CaixaDaLanchonete', () => {
     ])('compra simples em %p deve resultar em %p', validaTeste);
 
     test.each([
+        ['debito', 'R$ 4,50', ['cafe,1','chantily,1']],
+        ['credito', 'R$ 8,76', ['sanduiche,1','queijo,1']],
+    ])('compra item extra + principal em %p deve resultar em %p', validaTeste);
+
+    test.each([
+        ['debito', 'R$ 10,50', ['cafe,1','chantily,5']],
+        ['credito', 'R$ 17,00', ['sanduiche,1','queijo,5']],
+    ])('compra de multiplos item extra + um principal em %p deve resultar em %p', validaTeste);
+
+    test.each([
         ['credito', 'R$ 11,85', ['cafe,1', 'sanduiche,1', 'queijo,1']],
         ['debito', 'R$ 11,50', ['cafe,1', 'sanduiche,1', 'queijo,1']],
     ])('compra de 3 itens em %p deve resultar em %p', validaTeste);
@@ -35,6 +45,7 @@ describe('CaixaDaLanchonete', () => {
 
     test.each([
         ['com quantidade zero', 'dinheiro', 'Quantidade inválida!', ['cafe,0']],
+        ['item sem quantida', 'dinheiro', 'Quantidade inválida!', ['cafe']],
         ['com um valor', 'credito', 'Item inválido!', ['1']],
         ['com código inexistente', 'debito', 'Item inválido!', ['pizza, 1']],
         ['com forma de pagamento inválida', 'especie', 'Forma de pagamento inválida!', ['cafe, 1']],

@@ -51,7 +51,7 @@ class CaixaDaLanchonete {
         }
 
         // Verifica as condições para exibir a mensagem de item extra
-        if ((arrayItens.includes('chantily') || arrayItens.includes('queijo')) && !temCafe) {
+        if (arrayItens.includes('chantily') && !temCafe) {
             return 'Item extra não pode ser pedido sem o principal';
         } else if (arrayItens.includes('queijo') && !temSanduiche) {
             return 'Item extra não pode ser pedido sem o principal';
@@ -71,7 +71,7 @@ class CaixaDaLanchonete {
     }
 }
 
-var resultado = new CaixaDaLanchonete().calcularValorDaCompra('credito', []);
+var resultado = new CaixaDaLanchonete().calcularValorDaCompra('debito', ['cafe,1','chantily,5']);
 
 
 console.log(resultado);
